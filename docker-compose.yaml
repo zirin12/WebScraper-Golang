@@ -1,0 +1,25 @@
+version: '2.0'
+services:
+  api-1:
+    container_name: 'api-1'
+    build: './api-1'
+    ports:
+      - '9080:9080'
+    volumes:
+      - './api-1:/go/src/app'
+    depends_on:
+      - 'api-2'
+  api-2:
+    container_name: 'api-2'
+    build: './api-2'
+    ports:
+      - '8080:8080'
+    volumes:
+      - './api-2:/go/src/app'
+    depends_on:
+      - 'mongo'
+  mongo:
+    image: 'mongo:latest'
+    container_name: 'mongo'
+    ports:
+      - '27100:27017'
