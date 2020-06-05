@@ -1,4 +1,4 @@
-# SellerApp_Interview_Assignment
+# Web Scraper in golang
 ## Simple REST Services implemented in Golang
 
 ## Description
